@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início &raquo; Portal</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="shortcut icon" href="icon/icon.webp" type="image/x-icon">
+    <style>
+        :root {
+            --dark: #003641;
+            --green: #007e61;
+            --light: #EEF6F2;
+            --white: #FFF;
+            --radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f2ecf8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background: #00444e;
+            /* Mantém a cor existente */
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 70px;
+            /* Reduzido de 80px para 70px */
+        }
+
+        /* Logo */
+        header h1 img {
+            max-height: 50px;
+            /* Reduzido de 80px para 50px */
+            margin-left: 20px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            margin-right: 60px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: #0A6C74;
+        }
+
+        nav a:hover {
+            background: #084C4E;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            margin-right: 160px;
+        }
+
+        .header-buttons a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--green), var(--dark));
+            color: var(--white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            height: 40px;
+            min-width: unset;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .header-buttons a.reserva {
+            width: auto;
+            background: linear-gradient(135deg, var(--green), var(--dark));
+            min-width: unset;
+            padding: 0.4rem 0.8rem;
+            height: 36px;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+
+        .header-buttons a div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 1.2;
+        }
+
+        .linha1 {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .linha2 {
+            font-weight: 500;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .header-buttons a:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+
+
+
+        /* Barra de Pesquisa */
+        .search-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            max-width: 700px;
+            width: 90%;
+            margin: -30px auto 40px auto;
+            z-index: 5;
+            position: relative;
+        }
+
+        .search-input-box {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background: #f2f2f2;
+            border-radius: 6px;
+            padding: 8px 12px;
+        }
+
+        .search-input-box input {
+            border: none;
+            outline: none;
+            background: transparent;
+            flex: 1;
+            font-size: 1rem;
+            padding-left: 30px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .search-btn {
+            background: #86c13b;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background: #6fa12e;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #00444e;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: #fff;
+            color: #000;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin: 0 0 10px;
+            font-weight: 600;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* GPTW Section */
+        .info-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .info-text {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .info-text h3 {
+            font-size: 1.8rem;
+            color: #6A1B9A;
+            font-weight: 600;
+        }
+
+        .info-text p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .info-section img {
+            max-width: 300px;
+            height: auto;
+            margin-left: -10px;
+        }
+
+        /* Events Section */
+        .events-container {
+            padding: 10px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .events-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: 'Lato', sans-serif;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .events-cards .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            flex: 1 1 200px;
+            max-width: 200px;
+            min-height: 350px;
+            text-align: center;
+            font-size: 0.9em;
+            position: relative;
+        }
+
+        .events-cards .card .image-event {
+            width: 100%;
+            background-color: #262626;
+            height: 100px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            background-image: url(https://uniarp.edu.br/wp-content/uploads/2022/11/dots.png), linear-gradient(to right, #003641, #00AE9D);
+            background-repeat: no-repeat;
+            background-position: center right, center;
+            background-size: cover;
+        }
+
+        .events-cards .card .image-event .inner-cover {
+            border-left: 1px solid #fff;
+            position: relative;
+            top: 20px;
+            left: 20px;
+            max-width: 75%;
+            padding-left: 10px;
+            color: #fff;
+        }
+
+        .inner-cover .mes {
+            font-size: 1em;
+            line-height: 20px;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-left: 8px;
+        }
+
+        .inner-cover .dia {
+            font-size: 5em;
+            line-height: 52px;
+            font-weight: 300;
+        }
+
+        .events-cards .card .inner {
+            padding: 25px 20px;
+        }
+
+        .events-cards .card .title {
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            line-height: 18px;
+            font-weight: 800;
+        }
+
+        .events-cards .card .data {
+            font-size: 1em;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .events-cards .sep {
+            height: 3px;
+            width: 50px;
+            background: #ddd;
+            margin: 8px 0;
+        }
+
+        .events-cards .card .details {
+            font-size: 1em;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .events-cards i {
+            color: #37d4c5;
+            font-size: 1.2em;
+        }
+
+        /* Momentos Sicoob Section */
+        .slideshow {
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 500px;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Botões de navegação */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-button.left {
+            left: 10px;
+        }
+
+        .nav-button.right {
+            right: 10px;
+        }
+
+        .nav-button i {
+            font-size: 1.5rem;
+            box-shadow: none;
+            /* Remove a sombra */
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            width: 90%;
+            max-width: 800px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(0.8);
+            animation: popup 0.4s forwards;
+        }
+
+        .modal-header {
+            background: linear-gradient(90deg, var(--dark), var(--green));
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .modal-content {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .modal-header .close {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            /* largura do botão */
+            height: 32px;
+            /* altura do botão */
+            padding: 0;
+            /* sem preenchimento extra */
+            font-size: 1.5rem;
+            /* aumenta o “×” */
+            cursor: pointer;
+            /* mostra mãozinha ao passar */
+            background: transparent;
+            border: none;
+            color: #fff;
+            /* cor do “×”, ajuste se necessário */
+        }
+
+        #modalOverlayPortal .modal {
+            width: 95%;
+            /* ocupa 95% da largura da viewport */
+            max-width: 900px;
+            /* nunca ultrapassa 900px */
+        }
+
+        #modalOverlayPortal .modal {
+            min-height: 500px;
+            /* ajuste conforme necessidade */
+        }
+
+        .button-link {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 5px;
+            color: var(--dark);
+            /* deixa o texto escuro ou ajuste como quiser */
+            font-weight: 600;
+            text-decoration: none;
+            /* remove sublinhado */
+        }
+
+        .button-link i {
+            color: var(--green);
+            /* ícones verdes */
+            font-size: 1.1rem;
+        }
+
+        .button-link:hover {
+            background: #eef6f2;
+            transform: translateY(-2px);
+            text-decoration: none;
+            /* garante que não sublinhe ao passar o mouse */
+        }
+
+
+
+        /* Footer */
+        footer {
+            padding: 5px;
+            background: #00AE9D;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .social-icons {
+            display: none;
+        }
+
+        .btn {
+            background: #0A6C74;
+            color: #fff;
+            padding: 10px 20px;
+            border: 2px solid #012e35;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 0.9rem;
+        }
+
+        .btn i {
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background: #0A6C74;
+            color: #fff;
+        }
+
+        /* Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            z-index: 1002;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .popup-background {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+        }
+
+        .popup.active,
+        .popup-background.active {
+            display: block;
+        }
+
+        .popup-header {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #00444e;
+            font-weight: 600;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .popup-content {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .popup-content .btn {
+            margin-bottom: 10px;
+            width: calc(50% - 10px);
+            text-align: left;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        /*.popup-content .btn a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }*/
+
+        /* Estilização do botão de fechar */
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #00444e;
+            transition: color 0.3s, transform 0.2s;
+            padding: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: none;
+            /* Remove a sombra */
+        }
+
+        .popup-close:hover {
+            color: #0A6C74;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav {
+                display: none;
+            }
+
+            header h1 {
+                font-size: 1rem;
+            }
+
+            .info-section {
+                flex-direction: column;
+            }
+
+            .info-text,
+            .slideshow {
+                max-width: 100%;
+            }
+
+            .popup-content {
+                flex-direction: column;
+            }
+
+            .popup-content .btn {
+                width: 100%;
+            }
+        }
+
+        /* Estilo das Notícias */
+        .news-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .news-button {
+            background-color: #00AE9D;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .news-content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            width: 100%;
+            max-width: 900px;
+            background-color: transparent;
+            margin-top: 10px;
+            gap: 20px;
+        }
+
+        .images {
+            width: 550px;
+            height: 350px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background-size: cover;
+            background-color: #eaeaea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .news-text {
+            flex: 1;
+            max-width: 500px;
+            color: #333;
+            text-align: justify;
+            padding: 0 20px;
+            word-wrap: break-word;
+            line-height: 1.8;
+            overflow-wrap: break-word;
+        }
+
+        .news-text h2 {
+            margin-top: 0;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .news-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 0;
+            text-align: justify;
+        }
+
+        .header-links {
+            background: #00444e;
+            /* mesma cor do header */
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+
+        .header-links a {
+            color: #fff;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .header-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #fff;
+            transition: width 0.3s;
+        }
+
+        .header-links a:hover::after {
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 85px;
+            margin-top: 10px;
+        }
+
+        /*Carrosel*/
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: none;
+            height: 100%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-slide.active {
+            display: block;
+            animation: fade 1s ease-in-out;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.5;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+
+        .dot.active {
+            opacity: 1;
+            background-color: #00AE9D;
+        }
+
+        /* Filtros de Agências */
+        #agencias {
+            padding: 40px 60px;
+            background: #fff;
+        }
+
+        .agencias-header {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .agencias-header .subtitulo {
+            font-size: 0.85rem;
+            color: #00AE9D;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .agencias-header .event-title {
+            font-size: 2rem;
+            color: #003641;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: flex-end;
+            /* Alinha os botões à direita */
+            flex-wrap: wrap;
+            /* Permite que os botões quebrem linha em telas menores */
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .filter-buttons .filter-btn {
+            background: linear-gradient(135deg, #7DB61C, #00AE9D);
+            color: var(--white);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-buttons .filter-btn:hover,
+        .filter-buttons .filter-btn.active {
+            background: linear-gradient(135deg, #7DB61C, #00AE9D);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+        }
+
+        /* Carrosel cards */
+        .events-cards {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            scroll-snap-type: x mandatory;
+            /* opcional, pra snap perfeito */
+            justify-content: flex-start;
+            /* <-- alinha ao início */
+            padding: 0 40px;
+            /* deixa espaço pros botões */
+        }
+
+
+
+        .events-cards::-webkit-scrollbar {
+            height: 8px;
+            display: none;
+
+        }
+
+        .events-cards::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+
+        .agencia-card {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            width: 220px;
+            min-width: 220px;
+            margin-right: 10px;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+        }
+
+        #agenciasCards {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            scroll-behavior: smooth;
+        }
+
+
+        .carousel-btn {
+            background-color: #00AE9D;
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: #007e61;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-btn {
+                display: none;
+            }
+        }
+
+
+
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel-btn {
+            background-color: #00AE9D;
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .carousel-btn.left {
+            margin-right: 10px;
+        }
+
+        .carousel-btn.right {
+            margin-left: 10px;
+        }
+
+        /* eventos*/
+
+        .events-cardsx {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: 'Lato', sans-serif;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        /* cards de evento (herdam tudo de .card, mas sob .events-cardsx) */
+        .events-cardsx .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            flex: 1 1 200px;
+            max-width: 200px;
+            min-height: 350px;
+            text-align: center;
+            font-size: 0.9em;
+            position: relative;
+        }
+
+        .events-cardsx .card .image-event {
+            width: 100%;
+            background-color: #262626;
+            height: 100px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            background-image:
+                url(https://uniarp.edu.br/wp-content/uploads/2022/11/dots.png),
+                linear-gradient(to right, #00AE9D, #37d4c5);
+            background-repeat: no-repeat;
+            background-position: center right, center;
+            background-size: cover;
+        }
+
+        .events-cardsx .card .image-event .inner-cover {
+            border-left: 1px solid #fff;
+            position: relative;
+            top: 20px;
+            left: 20px;
+            max-width: 75%;
+            padding-left: 10px;
+            color: #fff;
+        }
+
+        .inner-cover .mes {
+            font-size: 1em;
+            line-height: 20px;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-left: 8px;
+        }
+
+        .inner-cover .dia {
+            font-size: 5em;
+            line-height: 52px;
+            font-weight: 300;
+        }
+
+        .events-cardsx .card .inner {
+            padding: 25px 20px;
+        }
+
+        .events-cardsx .card .title {
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            line-height: 18px;
+            font-weight: 800;
+        }
+
+        .events-cardsx .card .data {
+            font-size: 1em;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .events-cardsx .sep {
+            height: 3px;
+            width: 50px;
+            background: #ddd;
+            margin: 8px 0;
+        }
+
+        .events-cardsx .card .details {
+            font-size: 1em;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .events-cardsx i {
+            color: #37d4c5;
+            font-size: 1.2em;
+        }
+
+        .knowbe4-icon {
+            width: 22px;
+            /* ajusta conforme desejar */
+            height: auto;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1 class="logo">
+            <img src="fotos/sicooblogo.png" alt="Logo">
+        </h1>
+        <div class="header-buttons">
+            <a id="openModalPortal">
+                <i class="fas fa-building"></i>
+                <div>
+                    <span class="linha1">Portal do Colaborador</span>
+                    <span class="linha2">e Gestão</span>
+                </div>
+            </a>
+
+            <a id="openModalReservas" class="reserva"><i class="fas fa-calendar-check"></i>
+                <div>
+                    <span class="linha1">Reservas</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="header-links">
+        <a href="#">Início</a>
+        <a href="#">Produtos</a>
+        <a href="#">Serviços</a>
+        <a href="#">Quem Somos</a>
+        <a href="#">Contato</a>
+    </div>
+
+    <!-- Seção Principal com uma única imagem -->
+    <div class="carousel-container">
+        <div class="carousel-slide active">
+            <img src="banners/banner1.jpeg" alt="Slide 1">
+        </div>
+        <div class="carousel-slide">
+            <img src="banners/banner2.jpeg" alt="Slide 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="banners/banner3.jpeg" alt="Slide 3">
+        </div>
+
+        <div class="carousel-dots">
+            <span class="dot active" onclick="setSlide(0)"></span>
+            <span class="dot" onclick="setSlide(1)"></span>
+            <span class="dot" onclick="setSlide(2)"></span>
+        </div>
+    </div>
+
+    <!-- Barra de Pesquisa -->
+    <div class="search-wrapper">
+        <div class="search-input-box">
+            <i class="fas fa-search search-icon"></i>
+            <input id="searchInput" type="text" placeholder="Pesquise" />
+        </div>
+        <button id="searchBtn" class="search-btn">Buscar</button>
+    </div>
+
+    <!-- Cards das Agências -->
+    <section id="agencias">
+        <div class="agencias-header">
+            <div class="subtitulo">NOSSAS AGÊNCIAS</div>
+            <h2 class="event-title">Conheça nossas agências</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterAgencias('todas')">Todas</button>
+                <button class="filter-btn" onclick="filterAgencias('sc')">Santa Catarina</button>
+                <button class="filter-btn" onclick="filterAgencias('pr')">Paraná</button>
+            </div>
+        </div>
+
+        <div class="carousel-wrapper" style="position: relative;">
+            <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+            <div class="events-cards" id="agenciasCards">
+                <div class="card agencia-card sc">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">SC</div>
+                            <div class="dia">00</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Sede em Caçador</div>
+                        <div class="data">Unidade Santa Catarina</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Caçador - SC</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (49) 3563-0998</div>
+                    </div>
+                </div>
+
+                <div class="card agencia-card sc">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">SC</div>
+                            <div class="dia">01</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Agência em Macieira</div>
+                        <div class="data">Unidade Santa Catarina</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Macieira - SC</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (49) 3574-0273</div>
+                    </div>
+                </div>
+                <div class="card agencia-card sc">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">SC</div>
+                            <div class="dia">02</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Agência em Calmon</div>
+                        <div class="data">Unidade Santa Catarina</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Calmon - SC</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (49) 3573-0471</div>
+                    </div>
+                </div>
+                <div class="card agencia-card sc">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">SC</div>
+                            <div class="dia">03</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Agência em Timbó Grande</div>
+                        <div class="data">Unidade Santa Catarina</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Timbó Grande - SC</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (49) 3252-1089</div>
+                    </div>
+                </div>
+                <div class="card agencia-card sc">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">SC</div>
+                            <div class="dia">04</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Agência no Martello</div>
+                        <div class="data">Unidade Santa Catarina</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Caçador - SC</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (49) 3563-0708</div>
+                    </div>
+                </div>
+                <div class="card agencia-card pr">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">PR</div>
+                            <div class="dia">05</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Agência em Colombo</div>
+                        <div class="data">Unidade Paraná</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Colombo - PR</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (41) 3656-7603</div>
+                    </div>
+                </div>
+                <div class="card agencia-card sc">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">SC</div>
+                            <div class="dia">06</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Agência em Matos Costa</div>
+                        <div class="data">Unidade Santa Catarina</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Matos Costa - SC</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (49) 3572-1238</div>
+                    </div>
+                </div>
+                <div class="card agencia-card pr">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">PR</div>
+                            <div class="dia">07</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Agência em Rio Branco do Sul</div>
+                        <div class="data">Unidade Paraná</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Rio Branco do Sul - PR</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (49) 3542-4782</div>
+                    </div>
+                </div>
+                <div class="card agencia-card pr">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">PR</div>
+                            <div class="dia">08</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Agência em Itaperuçu</div>
+                        <div class="data">Unidade Paraná</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Itaperuçu - PR</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (41) 3798-2525</div>
+                    </div>
+                </div>
+                <div class="card agencia-card sc">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">SC</div>
+                            <div class="dia">97</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Agência Digital</div>
+                        <div class="data">Unidade Santa Catarina</div>
+                        <div class="details"><i class="fas fa-map-marker-alt"></i> Caçador - SC</div>
+                        <div class="details"><i class="fas fa-phone-alt"></i> (49) 3563-0998</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
+
+
+        </div>
+    </section>
+
+
+    <!-- Conteúdo Principal -->
+    <div class="content">
+        <section id="pontos-fortes">
+            <h2>Pontos fortes que nos fazem crescer</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-lightbulb"></i> Inovação</h3>
+                        <p>Estamos sempre inovando para trazer as melhores soluções.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-users"></i> Equipe</h3>
+                        <p>Uma equipe qualificada e dedicada ao seu sucesso.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-chart-line"></i> Cooperação</h3>
+                        <p>Focamos em colaboração para atingir objetivos comuns e beneficiar a todos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <div class="news-wrapper">
+            <button class="news-button">Todas as Notícias</button>
+            <div class="news-content" style="display: flex; align-items: flex-start;">
+                <div class="images"
+                    style="background: url('EVENTOS/WhatsApp\ Image\ 2024-06-18\ at\ 11.14.40.jpeg') no-repeat center center; background-size: cover; width: 50%; height: 350px; border-radius: 8px;">
+                </div>
+                <div class="news-text" style="flex: 1; margin-left: 20px; text-align: justify; line-height: 1.6;">
+                    <h2>Sicoob Instituto</h2>
+                    <p>O Sicoob Instituto promove a educação financeira e o desenvolvimento comunitário. Com
+                        projetos
+                        voltados para capacitação e inclusão social, oferecemos recursos para que cada indivíduo
+                        alcance
+                        seu potencial máximo. Acompanhe nossas notícias para estar por dentro das últimas
+                        atualizações e
+                        oportunidades.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-wrapper">
+            <div class="news-header">
+                <h1>Você Sabia?</h1>
+            </div>
+            <div class="news-content" style="display: flex; align-items: flex-start; gap: 20px;">
+                <div class="video-wrapper"
+                    style="flex: 1; max-width: 50%; height: auto; border-radius: 8px; overflow: hidden;">
+                    <video src="VOCÊ SABIA - DICAS/VÍDEO - LGPD.mp4" width="100%" height="auto" controls
+                        style="object-fit: cover; border-radius: 8px;"></video>
+                </div>
+                <div class="news-text" style="flex: 1; margin-left: 20px; text-align: justify; line-height: 1.6;">
+                    <h2>LGPD - Lei Geral de Proteção de Dados</h2>
+                    <p>Assista ao vídeo ao lado para entender melhor a importância da LGPD e como ela afeta tanto as
+                        empresas quanto os consumidores. É fundamental estar informado sobre a proteção de dados
+                        para
+                        garantir a segurança e a privacidade online.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <section id="eventos">
+            <h2 class="event-title">Eventos</h2>
+            <!-- nota: classe ‘events-cardsx’ (com a letra extra “x”) -->
+            <div class="events-cardsx">
+                <div class="card">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">Jul</div>
+                            <div class="dia">25</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Festa da Fogueira</div>
+                        <div class="data">Local: Sede</div>
+                        <div class="details">
+                            <i class="fas fa-map-marker-alt"></i>Parque Central – Centro
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-event">
+                        <div class="inner-cover">
+                            <div class="mes">Ago</div>
+                            <div class="dia">10</div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="title">Arraiá do Sicoob</div>
+                        <div class="data">Local: Caçador</div>
+                        <div class="details">
+                            <i class="fas fa-map-marker-alt"></i>Sicoob Caçador
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="momentos-sicoob">
+            <h2>Momentos Sicoob</h2>
+            <p>Veja as fotos dos eventos que aconteceram e como foram marcantes para todos nós.</p>
+            <div class="slideshow">
+                <button class="nav-button left" onclick="moveSlides(-1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="slides">
+                    <div class="slide"><img src="EVENTOS/WhatsApp Image 2024-06-18 at 11.14.40 (1).jpeg"
+                            alt="Momento 1"></div>
+                    <div class="slide"><img src="EVENTOS/6.png" alt="Momento 2"></div>
+                    <div class="slide"><img src="EVENTOS/9.png" alt="Momento 3"></div>
+                    <div class="slide"><img src="EVENTOS/FESTA JULINA - SICOOB UAD.png" alt="Momento 4"></div>
+                    <div class="slide"><img src="EVENTOS/7.png" alt="Momento 5"></div>
+                </div>
+                <button class="nav-button right" onclick="moveSlides(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </div>
+
+    <section id="gptw">
+        <div class="info-section">
+            <div class="info-text">
+                <h3>Great Place to Work</h3>
+                <p>A Sicoob é certificada como uma excelente empresa para se trabalhar, promovendo um ambiente de
+                    trabalho colaborativo e inovador.</p>
+            </div>
+            <img src="SELO - GPTW/selo-gptw-png.png" alt="GPTW">
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2024 TI Sicoob Vale dos Pinhais.</p>
+    </footer>
+
+    <!-- Popups -->
+    <div class="overlay" id="modalOverlayPortal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Portal do Colaborador</h2><span class="close" id="closeModalPortal">&times;</span>
+            </div>
+            <div class="modal-content">
+                <div class="column">
+                    <a href="https://sicoobsc.softexpert.com/softexpert/login?page=execution,104,1&msg=100144"
+                        class="button-link" target="_blank"><i class="fas fa-random"></i> SE Suite</a>
+                    <a href="https://portalmeurh.sicoob.com.br/FrameHTML/web/app/RH/PortalMeuRH/#/login"
+                        class="button-link" target="_blank"><i class="fas fa-user-circle"></i> Meu RH</a>
+                    <a href="https://empresarial.sicoobnet.com.br/instalador/index.html" class="button-link"
+                        target="_blank"><i class="fas fa-network-wired"></i> Sicoobnet</a>
+                    <a href="https://portal.sisbr.coop.br/cas/login?service=https%3a%2f%2fsisbranalitico.sisbr.coop.br%2fsisbranalitico%2fbi%2f%3fperspective%3dauthoring%26id%3diEB51E76AD59C4EF38F72E88DC8F23810%26objRef%3diEB51E76AD59C4EF38F72E88DC8F23810%26action%3drun%26format%3dHTML%26cmPropStr%3d%257B%2522id%2522%253A%2522iEB51E76AD59C4EF38F72E88DC8F23810%2522%252C%2522type%2522%253A%2522report%2522%252C%2522defaultName%2522%253A%2522BASE%2520DE%2520DADOS%2520-%2520CARTEIRA%2520AGRONEG%25C3%2593CIOS%2520-%2520CR%25C3%2589DITO%2520RURAL%2522%252C%2522permissions%2522%253A%255B%2522execute%2522%252C%2522read%2522%252C%2522traverse%2522%255D%257D"
+                        class="button-link" target="_blank"><i class="fas fa-chart-pie"></i> SisBr Analítico</a>
+                    <a href="https://atendimento.sisbr.coop.br/tas/public/ssp/
+                    " class="button-link" target="_blank"><i class="fas fa-ticket-alt"></i> Portal de Chamados|CCS</a>
+                    <a href="https://sca.sicoob.com.br/cas/login?service=https%3A%2F%2Fapp.fluigidentity.com%2Fcas-auth%2Flogin%3Fcas-base-url%3DX09rKp0XKSs4fHWebon9KyPVw8OdGhWyYXzc0wTsHAs%253D%26callback-url%3DaHR0cHM6Ly9zaWNvb2IuZmx1aWdpZGVudGl0eS5jb20vY2xvdWRwYXNzL2xvZ2luL2Nhc1Jlc3BvbnNl%26user-url%3DaHR0cHM6Ly9zaWNvb2IuZmx1aWdpZGVudGl0eS5jb20vY2xvdWRwYXNzL1NQSW5pdFBvc3QvcmVjZWl2ZVNTT1JlcXVlc3QvOGYwYWJjZDM3YzIxNDhiNWFhNjFmMTYwNjZiYWZhNDQvMjExN2Q5MTFkNTA0NGI2Njk3ZjE3NDE3NzdlZjQ2OGY%3D%26protocol-version%3DCAS2%26validate-type%3DPROXY_VALIDATE%26nameField%3Ddescricao%26surnameField%3D%26mailField%3Demail"
+                        class="button-link" target="_blank"><i class="fas fa-file-signature"></i> Assinatura | Folha de
+                        Pagamento</a>
+
+                </div>
+                <div class="column">
+                    <a href="https://webapps.sicoobapps.com.br/portal/central/sistema/autenticacao/logon.php?logon_erro=1"
+                        class="button-link" target="_blank"><i class="fa fa-briefcase"></i> Portal Sicoob SC/RS</a>
+                    <a href="https://login.sisbr.com.br/cas/login?service=https%3A%2F%2Flogin.sisbr.com.br%2Fcas%2Fidp%2Fprofile%2FSAML2%2FPOST%2FSSO%2FCallback.%2B%3FentityId%3Dsicoob%26SAMLRequest%3DPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c2FtbDJwOkF1dGhuUmVxdWVzdCB4bWxuczpzYW1sMnA9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpwcm90b2NvbCIgQXNzZXJ0aW9uQ29uc3VtZXJTZXJ2aWNlVVJMPSJodHRwczovL3NpY29vYi5rb252aXZhLmNvbS5ici9hY3Rpb24vc3NvL3NhbWwvcG9zdCIgRGVzdGluYXRpb249Imh0dHBzOi8vbG9naW4uc2lzYnIuY29tLmJyL2Nhcy9pZHAvcHJvZmlsZS9TQU1MMi9SZWRpcmVjdC9TU08iIElEPSJfYTMwYzQyNzY0NDkwY2UxZjdmMjE5ODA0ZjhkNDhiZDciIElzc3VlSW5zdGFudD0iMjAyNS0wNS0wNVQxOTozNTozMC4yNTdaIiBQcm90b2NvbEJpbmRpbmc9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpiaW5kaW5nczpIVFRQLVBPU1QiIFZlcnNpb249IjIuMCI%252BPHNhbWwyOklzc3VlciB4bWxuczpzYW1sMj0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI%252Bc2ljb29iPC9zYW1sMjpJc3N1ZXI%252BPHNhbWwycDpSZXF1ZXN0ZWRBdXRobkNvbnRleHQgQ29tcGFyaXNvbj0ibWluaW11bSI%252BPHNhbWwyOkF1dGhuQ29udGV4dENsYXNzUmVmIHhtbG5zOnNhbWwyPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXNzZXJ0aW9uIj51cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YWM6Y2xhc3NlczpQYXNzd29yZDwvc2FtbDI6QXV0aG5Db250ZXh0Q2xhc3NSZWY%252BPC9zYW1sMnA6UmVxdWVzdGVkQXV0aG5Db250ZXh0Pjwvc2FtbDJwOkF1dGhuUmVxdWVzdD4%253D%26RelayState#/portal"
+                        class="button-link" target="_blank"><i class="fas fa-university"></i> Sicoob Universidade</a>
+                    <a href="file://sicoobcdr.coop/NETLOGON/PROJETO_AGENDA/index.html" class="button-link"
+                        target="_blank"><i class="far fa-address-book"></i> Agenda </a>
+                    <a href="https://outlook.office365.com/mail/" class="button-link" target="_blank"><i
+                            class="fas fa-envelope"></i> WebMail</a>
+                    <a href="https://clcoop.sicoobsc.com.br/" class="button-link" target="_blank"><i
+                            class="fas fa-users-cog"></i> ClCoop</a>
+
+                    <a href="https://sicoob.maiscoop.com/#/login" class="button-link" target="_blank"><i
+                            class="fas fa-comments"></i> MaisCoop</a>
+                </div>
+                <div class="column">
+                    <a href="https://sca.sicoob.com.br/cas/login?service=http%3A%2F%2F172.16.1.142%2Fgroup%2Fintranet%2Fdocumentos"
+                        class="button-link" target="_blank"><i class="fas fa-database"></i> Intranet</a>
+                    <a href="https://ssopagamentos.sisbr.coop.br/auth/realms/sisbr/protocol/openid-connect/auth?redirect_uri=https://portal.sisbr.coop.br/sipagnet/wrk/loginKeycloak.jsp&client_id=sipagnet&response_type=code&response_mode=fragment"
+                        class="button-link" target="_blank"><i class="fas fa-sitemap"></i> Sipagnet</a>
+                    <a href="https://secure.d4sign.com.br/login.html" class="button-link" target="_blank"><i
+                            class="fas fa-signature"></i> D4SIGN </a>
+                    <a href="https://training.knowbe4.com/ui/login" class="button-link" target="_blank"><i
+                            class="fas fa-user-graduate"></i> KNOWBE4</a>
+                    <a href="https://sca.sicoob.com.br/cas/login?service=http%3A%2F%2F172.16.1.142%2Fgroup%2Fintranet%2Fdocumentos
+                    " class="button-link" target="_blank"><i class="far fa-credit-card"></i> AutoCredi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="modalOverlayReservas">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Reservas</h2><span class="close" id="closeModalReservas">&times;</span>
+            </div>
+            <div class="modal-content">
+                <div class="column">
+                    <a href="#" class="button-link"><i class="fas fa-car"></i>Reserva – Veículos</a>
+                    <a href="#" class="button-link"><i class="fas fa-door-open"></i>Reserva – Sala de Reuniões</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('openModalReservas').onclick = () => {
+            document.getElementById('modalOverlayReservas').classList.add('active');
+        };
+        document.getElementById('openModalPortal').onclick = () => {
+            document.getElementById('modalOverlayPortal').classList.add('active');
+        };
+        document.getElementById('closeModalReservas').onclick = () => {
+            document.getElementById('modalOverlayReservas').classList.remove('active');
+        };
+        document.getElementById('closeModalPortal').onclick = () => {
+            document.getElementById('modalOverlayPortal').classList.remove('active');
+        };
+
+        window.onclick = e => {
+            ['modalOverlayReservas', 'modalOverlayPortal'].forEach(id => {
+                if (e.target.id === id) {
+                    document.getElementById(id).classList.remove('active');
+                }
+            });
+        };
+    </script>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                dots[i].classList.toggle('active', i === index);
+            });
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+
+        function setSlide(index) {
+            showSlide(index);
+        }
+
+        setInterval(nextSlide, 5000); // troca automática a cada 5s
+    </script>
+
+    <script>
+        let currentMomentSlide = 0;
+        const momentSlides = document.querySelectorAll("#momentos-sicoob .slide");
+
+        function moveSlides(direction) {
+            currentMomentSlide += direction;
+
+            if (currentMomentSlide < 0) {
+                currentMomentSlide = momentSlides.length - 1;
+            } else if (currentMomentSlide >= momentSlides.length) {
+                currentMomentSlide = 0;
+            }
+
+            momentSlides.forEach((slide, index) => {
+                slide.style.display = index === currentMomentSlide ? 'block' : 'none';
+            });
+        }
+
+        // Inicializa o carrossel exibindo o primeiro slide
+        document.addEventListener("DOMContentLoaded", () => {
+            moveSlides(0);
+        });
+    </script>
+
+    <script>
+        function filterAgencias(filtro) {
+            const cards = document.querySelectorAll('.agencia-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Marca o botão ativo
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document
+                .querySelector(`.filter-btn[onclick*="${filtro}"]`)
+                .classList.add('active');
+
+            // Mostrar ou esconder sem sobrescrever o display original
+            cards.forEach(card => {
+                if (filtro === 'todas' || card.classList.contains(filtro)) {
+                    // remove apenas o inline, volta pro display definido em CSS
+                    card.style.removeProperty('display');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Volta ao início do carrossel
+            document.getElementById('agenciasCards').scrollLeft = 0;
+        }
+    </script>
+
+    <script>
+        function scrollCarousel(direction) {
+            const container = document.getElementById('agenciasCards');
+            const scrollAmount = container.clientWidth;
+            container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+        const input = document.getElementById('searchInput');
+        const btn = document.getElementById('searchBtn');
+
+        btn.addEventListener('click', filterAgencias);
+        input.addEventListener('keyup', e => {
+            if (e.key === 'Enter') filterAgencias();
+        });
+
+        function filterAgencias() {
+            const termo = input.value.trim().toLowerCase();
+            document.querySelectorAll('.agencia-card').forEach(card => {
+                // pega todo o texto visível do card
+                const textoCard = card.innerText.toLowerCase();
+
+                // se encontrar o termo em qualquer parte do card, mostra; senão esconde
+                card.style.display = textoCard.includes(termo) ? '' : 'none';
+            });
+        }
+    </script>
+
+</body>
+
+</html>
