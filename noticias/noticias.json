@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "titulo": "Cinthia apresenta projeto social",
+    "resumo": "Cinthia propôs um novo projeto para as comunidades rurais...",
+    "texto": "O projeto apresentado por Cinthia visa promover oficinas e capacitações nas regiões rurais com foco em educação financeira...",
+    "imagem": "./imagens/5.png",
+    "data": "15.05.25"
+  },
+  {
+    "id": 2,
+    "titulo": "Visita da ACIC à cooperativa",
+    "resumo": "O Conselho da ACIC esteve presente na sede do Sicoob...",
+    "texto": "A visita reforça os laços institucionais e promoveu discussões sobre ações conjuntas...",
+    "imagem": "./imagens/3.png",
+    "data": "14.05.25"
+  },
+
+  {
+    "id": 3,
+    "titulo": "Cinthia apresenta projeto social",
+    "resumo": "Cinthia propôs um novo projeto para as comunidades rurais...",
+    "texto": "O projeto apresentado por Cinthia visa promover oficinas e capacitações nas regiões rurais com foco em educação financeira...",
+    "imagem": "./imagens/4.png",
+    "data": "15.05.25"
+  },
+  {
+    "id": 4,
+    "titulo": "Visita da ACIC à cooperativa",
+    "resumo": "O Conselho da ACIC esteve presente na sede do Sicoob...",
+    "texto": "A visita reforça os laços institucionais e promoveu discussões sobre ações conjuntas...",
+    "imagem": "./imagens/1.png",
+    "data": "14.05.25"
+  },
+
+  {
+    "id": 5,
+    "titulo": "Cinthia apresenta projeto social",
+    "resumo": "Cinthia propôs um novo projeto para as comunidades rurais...",
+    "texto": "O projeto apresentado por Cinthia visa promover oficinas e capacitações nas regiões rurais com foco em educação financeira...",
+    "imagem": "./imagens/2.png",
+    "data": "15.05.25"
+  },
+  {
+    "id": 6,
+    "titulo": "Visita da ACIC à cooperativa",
+    "resumo": "O Conselho da ACIC esteve presente na sede do Sicoob...",
+    "texto": "A visita reforça os laços institucionais e promoveu discussões sobre ações conjuntas...",
+    "imagem": "./imagens/3.png",
+    "data": "14.05.25"
+  }
+]
