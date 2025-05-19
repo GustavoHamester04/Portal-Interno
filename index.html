@@ -19,26 +19,30 @@
     <!-- Cabeçalho -->
     <header>
         <h1 class="logo">
-            <img src="fotos/sicooblogo.png" alt="Logo">
+            <a href="index.html">
+                <img src="fotos/sicooblogo.png" alt="Logo">
+            </a>
         </h1>
+
+        <div class="header-center">
+            <span id="weather-info" class="weather-info"></span>
+        </div>
+
         <div class="header-buttons">
             <a id="openModalPortal">
                 <i class="fas fa-building"></i>
-                <div>
-                    <span class="linha1">Portal do Colaborador</span>
-                </div>
+                <div><span class="linha1">Portal do Colaborador</span></div>
             </a>
 
-            <a id="openModalReservas" class="reserva"><i class="fas fa-calendar-check"></i>
-                <div>
-                    <span class="linha1">Reservas</span>
-                </div>
+            <a id="openModalReservas" class="reserva">
+                <i class="fas fa-calendar-check"></i>
+                <div><span class="linha1">Reservas</span></div>
             </a>
         </div>
     </header>
 
     <div class="header-links">
-        <a href="#">Início</a>
+        <a href="index.html">Início</a>
         <a href="#">Produtos</a>
         <a href="#">Serviços</a>
         <a href="https://www.sicoob.com.br/web/sicoob/sistema-sicoob">Quem Somos</a>
@@ -275,24 +279,17 @@
 
 
 
-        <div class="news-wrapper">
-            <button class="news-button" >Todas as Notícias</button>
-            <div class="news-content" style="display: flex; align-items: flex-start;">
-                <div class="images"
-                    style="background: url('EVENTOS/WhatsApp\ Image\ 2024-06-18\ at\ 11.14.40.jpeg') no-repeat center center; background-size: cover; width: 50%; height: 350px; border-radius: 8px;">
-                </div>
-                <div class="news-text" style="flex: 1; margin-left: 20px; text-align: justify; line-height: 1.6;">
-                    <h2>Sicoob Instituto</h2>
-                    <p>O Sicoob Instituto promove a educação financeira e o desenvolvimento comunitário. Com
-                        projetos
-                        voltados para capacitação e inclusão social, oferecemos recursos para que cada indivíduo
-                        alcance
-                        seu potencial máximo. Acompanhe nossas notícias para estar por dentro das últimas
-                        atualizações e
-                        oportunidades.</p>
-                </div>
+        <section class="news-wrapper">
+            <h2>Notícias</h2>
+
+            <!-- Aqui o JS vai inserir os 4 cards -->
+            <div id="ultimas-noticias" class="news-content"></div>
+
+            <div class="news-button-container">
+                <a href="noticias/index.html" class="news-button">Todas as Notícias</a>
             </div>
-        </div>
+        </section>
+
 
         <div class="news-wrapper">
             <div class="news-header">
@@ -300,7 +297,7 @@
             </div>
             <div class="news-content" style="display: flex; align-items: flex-start; gap: 20px;">
                 <div class="video-wrapper"
-                    style="flex: 1; max-width: 50%; height: auto; border-radius: 8px; overflow: hidden;">
+                    style="flex: 1; max-width: 40%; height: auto; border-radius: 8px; overflow: hidden;">
                     <video src="VOCÊ SABIA - DICAS/VÍDEO - LGPD.mp4" width="100%" height="auto" controls
                         style="object-fit: cover; border-radius: 8px;"></video>
                 </div>
@@ -382,7 +379,6 @@
     </div>
 
     <!-- Rodapé -->
-    <!-- FOOTER SIMPLES -->
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__col">
@@ -480,11 +476,43 @@
                     <a href="https://sicoob-my.sharepoint.com/personal/mateus_frank3038_sicoob_com_br/Lists/Reserva%20%20Veculos/AllItems.aspx?viewid=e0e951bd-2600-4248-b6b7-4764cdc4257d&env=WebViewList"
                         class="button-link" target="_blank"><i class="fas fa-car"></i> Reserva – Veículos</a>
                     <a href="https://sicoob-my.sharepoint.com/personal/mateus_frank3038_sicoob_com_br/Lists/Reserva%20%20Sala%20de%20Reunies/AllItems.aspx?e=3%3Aa7848a7b36004a3ebe23a6a9100be3a6&sharingv2=true&fromShare=true&at=9&xsdata=MDV8MDJ8Z3VzdGF2b2hhbWVzdGVyMzAzOEBzaWNvb2IuY29tLmJyfGZhNTU2ZDVmODcwNjQwYjJkY2U1MDhkZDNmZDM0MDk0fGI0MTdiNjIwMmFlOTRhODNhYjZjN2ZiZDgyOGJkYTFkfDF8MHw2Mzg3MzY4OTg3MzU1MTA3MjB8VW5rbm93bnxUV0ZwYkdac2IzZDhleUpGYlhCMGVVMWhjR2tpT25SeWRXVXNJbFlpT2lJd0xqQXVNREF3TUNJc0lsQWlPaUpYYVc0ek1pSXNJa0ZPSWpvaVRXRnBiQ0lzSWxkVUlqb3lmUT09fDB8fHw%3D&sdata=WUVET0k3MFV4UGZ4Tzh1WDZHeVJoeG1IeGRkOEtsWndlMVZVZXowc2VyQT0%3D&CT=1738602293973&OR=OWA-NT-Mail&CID=a40c8efd-bb9a-3876-9a9c-b41e00db990d&clickParams=eyJYLUFwcE5hbWUiOiJNaWNyb3NvZnQgT3V0bG9vayBXZWIgQXBwIiwiWC1BcHBWZXJzaW9uIjoiMjAyNTAxMjQwMDYuMDkiLCJPUyI6IldpbmRvd3MgMTAifQ%3D%3D"
-                        class="button-link" target="_blank"><i class="fas fa-door-open"></i> Reserva – Sala de Reuniões</a>
+                        class="button-link" target="_blank"><i class="fas fa-door-open"></i> Reserva – Sala de
+                        Reuniões</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        fetch('noticias/noticias.json') // Caminho relativo ao index.html principal
+            .then(res => res.json())
+            .then(noticias => {
+                const ultimas = noticias.slice(0, 4); // Pega as 4 primeiras
+                const container = document.getElementById('ultimas-noticias');
+
+                ultimas.forEach(n => {
+                    const imagemCorrigida = location.pathname.includes("noticias")
+                        ? n.imagem.replace("noticias/", "")
+                        : n.imagem;
+
+                    const card = document.createElement('div');
+                    card.className = 'news-card';
+                    card.innerHTML = `
+          <div class="news-image" style="background-image: url('${imagemCorrigida}');"></div>
+          <div class="news-body">
+            <h3>${n.titulo}</h3>
+            <p>${n.resumo || n.texto.slice(0, 100) + '...'}</p>
+            <a href="noticias/noticia.html?id=${n.id}">Leia mais</a>
+          </div>
+        `;
+                    container.appendChild(card);
+                });
+            })
+            .catch(err => {
+                document.getElementById('ultimas-noticias').innerHTML = '<p>Erro ao carregar notícias.</p>';
+                console.error('Erro ao carregar últimas notícias:', err);
+            });
+    </script>
 
 
 </body>

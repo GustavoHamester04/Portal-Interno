@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícia Completa - Sicoob</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="shortcut icon" href="../icon/icon.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1 class="logo">
+            <a href="../index.html">
+                <img src="../fotos/sicooblogo.png" alt="Logo">
+            </a>
+        </h1>
+
+        <div class="header-center">
+            <span id="weather-info" class="weather-info"></span>
+        </div>
+
+        <div class="header-buttons">
+            <a id="openModalPortal">
+                <i class="fas fa-building"></i>
+                <div><span class="linha1">Portal do Colaborador</span></div>
+            </a>
+
+            <a id="openModalReservas" class="reserva">
+                <i class="fas fa-calendar-check"></i>
+                <div><span class="linha1">Reservas</span></div>
+            </a>
+        </div>
+    </header>
+
+    <div class="header-links">
+        <a href="../index.html">Início</a>
+        <a href="#">Produtos</a>
+        <a href="#">Serviços</a>
+        <a href="https://www.sicoob.com.br/web/sicoob/sistema-sicoob">Quem Somos</a>
+        <a href="#">Contato</a>
+    </div>
+
+    <main class="noticia-completa">
+        <div class="container">
+            <h1 id="titulo-noticia"></h1>
+            <div class="linha-destaque"></div>
+            <p id="texto-noticia" class="texto-noticia"></p>
+            <div class="galeria" id="galeria-noticia"></div>
+            <span id="data-noticia" class="data"></span>
+        </div>
+    </main>
+
+    <section class="news-wrapper">
+        <h2>Outras notícias</h2>
+
+        <!-- Aqui o JS vai inserir os 4 cards -->
+        <div id="ultimas-noticias" class="news-content"></div>
+
+        <div class="news-button-container">
+            <a href="index.html" class="news-button">Ver Mais</a>
+        </div>
+    </section>
+
+
+
+
+    <!-- Rodapé -->
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__col">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Quem Somos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4>Atendimento</h4>
+                <p><strong>(49) 3563-0998</strong><br>WhatsApp &amp; Ligação</p>
+            </div>
+
+            <div class="footer__col">
+                <h4>Redes Sociais</h4>
+                <div class="footer__social">
+                    <a href="https://www.youtube.com/@sicoobvaledospinhais1385" aria-label="Youtube" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h4>© 2024 Sicoob Vale dos Pinhais</h4>
+                <p>Desenvolvido por TI Sicoob.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Popups -->
+    <div class="overlay" id="modalOverlayPortal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Portal do Colaborador</h2><span class="close" id="closeModalPortal">&times;</span>
+            </div>
+            <div class="modal-content">
+                <div class="column">
+                    <a href="https://sicoobsc.softexpert.com/softexpert/login?page=execution,104,1&msg=100144"
+                        class="button-link" target="_blank"><i class="fas fa-random"></i> SE Suite</a>
+                    <a href="https://portalmeurh.sicoob.com.br/FrameHTML/web/app/RH/PortalMeuRH/#/login"
+                        class="button-link" target="_blank"><i class="fas fa-user-circle"></i> Meu RH</a>
+                    <a href="https://empresarial.sicoobnet.com.br/instalador/index.html" class="button-link"
+                        target="_blank"><i class="fas fa-network-wired"></i> Sicoobnet</a>
+                    <a href="https://portal.sisbr.coop.br/cas/login?service=https%3a%2f%2fsisbranalitico.sisbr.coop.br%2fsisbranalitico%2fbi%2f%3fperspective%3dauthoring%26id%3diEB51E76AD59C4EF38F72E88DC8F23810%26objRef%3diEB51E76AD59C4EF38F72E88DC8F23810%26action%3drun%26format%3dHTML%26cmPropStr%3d%257B%2522id%2522%253A%2522iEB51E76AD59C4EF38F72E88DC8F23810%2522%252C%2522type%2522%253A%2522report%2522%252C%2522defaultName%2522%253A%2522BASE%2520DE%2520DADOS%2520-%2520CARTEIRA%2520AGRONEG%25C3%2593CIOS%2520-%2520CR%25C3%2589DITO%2520RURAL%2522%252C%2522permissions%2522%253A%255B%2522execute%2522%252C%2522read%2522%252C%2522traverse%2522%255D%257D"
+                        class="button-link" target="_blank"><i class="fas fa-chart-pie"></i> SisBr Analítico</a>
+                    <a href="https://atendimento.sisbr.coop.br/tas/public/ssp/
+                    " class="button-link" target="_blank"><i class="fas fa-ticket-alt"></i> Portal de Chamados|CCS</a>
+                    <a href="https://sca.sicoob.com.br/cas/login?service=https%3A%2F%2Fapp.fluigidentity.com%2Fcas-auth%2Flogin%3Fcas-base-url%3DX09rKp0XKSs4fHWebon9KyPVw8OdGhWyYXzc0wTsHAs%253D%26callback-url%3DaHR0cHM6Ly9zaWNvb2IuZmx1aWdpZGVudGl0eS5jb20vY2xvdWRwYXNzL2xvZ2luL2Nhc1Jlc3BvbnNl%26user-url%3DaHR0cHM6Ly9zaWNvb2IuZmx1aWdpZGVudGl0eS5jb20vY2xvdWRwYXNzL1NQSW5pdFBvc3QvcmVjZWl2ZVNTT1JlcXVlc3QvOGYwYWJjZDM3YzIxNDhiNWFhNjFmMTYwNjZiYWZhNDQvMjExN2Q5MTFkNTA0NGI2Njk3ZjE3NDE3NzdlZjQ2OGY%3D%26protocol-version%3DCAS2%26validate-type%3DPROXY_VALIDATE%26nameField%3Ddescricao%26surnameField%3D%26mailField%3Demail"
+                        class="button-link" target="_blank"><i class="fas fa-file-signature"></i> Assinatura | Folha de
+                        Pagamento</a>
+
+                </div>
+                <div class="column">
+                    <a href="https://webapps.sicoobapps.com.br/portal/central/sistema/autenticacao/logon.php?logon_erro=1"
+                        class="button-link" target="_blank"><i class="fa fa-briefcase"></i> Portal Sicoob SC/RS</a>
+                    <a href="https://login.sisbr.com.br/cas/login?service=https%3A%2F%2Flogin.sisbr.com.br%2Fcas%2Fidp%2Fprofile%2FSAML2%2FPOST%2FSSO%2FCallback.%2B%3FentityId%3Dsicoob%26SAMLRequest%3DPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c2FtbDJwOkF1dGhuUmVxdWVzdCB4bWxuczpzYW1sMnA9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpwcm90b2NvbCIgQXNzZXJ0aW9uQ29uc3VtZXJTZXJ2aWNlVVJMPSJodHRwczovL3NpY29vYi5rb252aXZhLmNvbS5ici9hY3Rpb24vc3NvL3NhbWwvcG9zdCIgRGVzdGluYXRpb249Imh0dHBzOi8vbG9naW4uc2lzYnIuY29tLmJyL2Nhcy9pZHAvcHJvZmlsZS9TQU1MMi9SZWRpcmVjdC9TU08iIElEPSJfYTMwYzQyNzY0NDkwY2UxZjdmMjE5ODA0ZjhkNDhiZDciIElzc3VlSW5zdGFudD0iMjAyNS0wNS0wNVQxOTozNTozMC4yNTdaIiBQcm90b2NvbEJpbmRpbmc9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpiaW5kaW5nczpIVFRQLVBPU1QiIFZlcnNpb249IjIuMCI%252BPHNhbWwyOklzc3VlciB4bWxuczpzYW1sMj0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI%252Bc2ljb29iPC9zYW1sMjpJc3N1ZXI%252BPHNhbWwycDpSZXF1ZXN0ZWRBdXRobkNvbnRleHQgQ29tcGFyaXNvbj0ibWluaW11bSI%252BPHNhbWwyOkF1dGhuQ29udGV4dENsYXNzUmVmIHhtbG5zOnNhbWwyPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXNzZXJ0aW9uIj51cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YWM6Y2xhc3NlczpQYXNzd29yZDwvc2FtbDI6QXV0aG5Db250ZXh0Q2xhc3NSZWY%252BPC9zYW1sMnA6UmVxdWVzdGVkQXV0aG5Db250ZXh0Pjwvc2FtbDJwOkF1dGhuUmVxdWVzdD4%253D%26RelayState#/portal"
+                        class="button-link" target="_blank"><i class="fas fa-university"></i> Sicoob Universidade</a>
+                    <a href="file://sicoobcdr.coop/NETLOGON/PROJETO_AGENDA/index.html" class="button-link"
+                        target="_blank"><i class="far fa-address-book"></i> Agenda </a>
+                    <a href="https://outlook.office365.com/mail/" class="button-link" target="_blank"><i
+                            class="fas fa-envelope"></i> WebMail</a>
+                    <a href="https://clcoop.sicoobsc.com.br/" class="button-link" target="_blank"><i
+                            class="fas fa-users-cog"></i> ClCoop</a>
+
+                    <a href="https://sicoob.maiscoop.com/#/login" class="button-link" target="_blank"><i
+                            class="fas fa-comments"></i> MaisCoop</a>
+                </div>
+                <div class="column">
+                    <a href="https://sca.sicoob.com.br/cas/login?service=http%3A%2F%2F172.16.1.142%2Fgroup%2Fintranet%2Fdocumentos"
+                        class="button-link" target="_blank"><i class="fas fa-database"></i> Intranet</a>
+                    <a href="https://ssopagamentos.sisbr.coop.br/auth/realms/sisbr/protocol/openid-connect/auth?redirect_uri=https://portal.sisbr.coop.br/sipagnet/wrk/loginKeycloak.jsp&client_id=sipagnet&response_type=code&response_mode=fragment"
+                        class="button-link" target="_blank"><i class="fas fa-sitemap"></i> Sipagnet</a>
+                    <a href="https://secure.d4sign.com.br/login.html" class="button-link" target="_blank"><i
+                            class="fas fa-signature"></i> D4SIGN </a>
+                    <a href="https://training.knowbe4.com/ui/login" class="button-link" target="_blank"><i
+                            class="fas fa-user-graduate"></i> KNOWBE4</a>
+                    <a href="https://sca.sicoob.com.br/cas/login?service=http%3A%2F%2F172.16.1.142%2Fgroup%2Fintranet%2Fdocumentos
+                    " class="button-link" target="_blank"><i class="far fa-credit-card"></i> AutoCredi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="modalOverlayReservas">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Reservas</h2><span class="close" id="closeModalReservas">&times;</span>
+            </div>
+            <div class="modal-content">
+                <div class="column">
+                    <a href="https://sicoob-my.sharepoint.com/personal/mateus_frank3038_sicoob_com_br/Lists/Reserva%20%20Veculos/AllItems.aspx?viewid=e0e951bd-2600-4248-b6b7-4764cdc4257d&env=WebViewList"
+                        class="button-link" target="_blank"><i class="fas fa-car"></i> Reserva – Veículos</a>
+                    <a href="https://sicoob-my.sharepoint.com/personal/mateus_frank3038_sicoob_com_br/Lists/Reserva%20%20Sala%20de%20Reunies/AllItems.aspx?e=3%3Aa7848a7b36004a3ebe23a6a9100be3a6&sharingv2=true&fromShare=true&at=9&xsdata=MDV8MDJ8Z3VzdGF2b2hhbWVzdGVyMzAzOEBzaWNvb2IuY29tLmJyfGZhNTU2ZDVmODcwNjQwYjJkY2U1MDhkZDNmZDM0MDk0fGI0MTdiNjIwMmFlOTRhODNhYjZjN2ZiZDgyOGJkYTFkfDF8MHw2Mzg3MzY4OTg3MzU1MTA3MjB8VW5rbm93bnxUV0ZwYkdac2IzZDhleUpGYlhCMGVVMWhjR2tpT25SeWRXVXNJbFlpT2lJd0xqQXVNREF3TUNJc0lsQWlPaUpYYVc0ek1pSXNJa0ZPSWpvaVRXRnBiQ0lzSWxkVUlqb3lmUT09fDB8fHw%3D&sdata=WUVET0k3MFV4UGZ4Tzh1WDZHeVJoeG1IeGRkOEtsWndlMVZVZXowc2VyQT0%3D&CT=1738602293973&OR=OWA-NT-Mail&CID=a40c8efd-bb9a-3876-9a9c-b41e00db990d&clickParams=eyJYLUFwcE5hbWUiOiJNaWNyb3NvZnQgT3V0bG9vayBXZWIgQXBwIiwiWC1BcHBWZXJzaW9uIjoiMjAyNTAxMjQwMDYuMDkiLCJPUyI6IldpbmRvd3MgMTAifQ%3D%3D"
+                        class="button-link" target="_blank"><i class="fas fa-door-open"></i> Reserva – Sala de
+                        Reuniões</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get("id"));
+
+        const titulo = document.getElementById("titulo-noticia");
+        const texto = document.getElementById("texto-noticia");
+        const data = document.getElementById("data-noticia");
+        const galeria = document.getElementById("galeria-noticia");
+
+        fetch("noticias.json")
+            .then(response => response.json())
+            .then(noticias => {
+                const noticia = noticias.find(n => n.id === id);
+
+                if (!noticia) {
+                    titulo.innerText = "Notícia não encontrada";
+                    texto.innerText = "";
+                    data.innerText = "";
+                    return;
+                }
+
+                titulo.textContent = noticia.titulo;
+                texto.textContent = noticia.texto;
+                data.textContent = noticia.data;
+
+                const img = document.createElement("img");
+                img.src = noticia.imagem;
+                img.alt = noticia.titulo;
+                img.style = "width: 100%; max-width: 600px; border-radius: 8px; margin: 20px auto; display: block;";
+                galeria.appendChild(img);
+            })
+            .catch(error => {
+                titulo.innerText = "Erro ao carregar notícia.";
+                console.error("Erro ao buscar JSON:", error);
+            });
+    </script>
+
+    <script>
+        // Captura o ID da notícia atual na URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const idAtual = parseInt(urlParams.get('id')); // notícia que está sendo lida
+
+        fetch('noticias.json')
+            .then(res => res.json())
+            .then(noticias => {
+                // Remove a notícia atual da lista
+                const relacionadas = noticias.filter(n => n.id !== idAtual).slice(0, 4); // mostra só as 4 primeiras diferentes
+
+                const container = document.getElementById('ultimas-noticias');
+
+                relacionadas.forEach(n => {
+                    const imagemCorrigida = location.pathname.includes("noticias")
+                        ? n.imagem.replace("noticias/", "")
+                        : n.imagem;
+
+                    const card = document.createElement('div');
+                    card.className = 'news-card';
+                    card.innerHTML = `
+                    <div class="news-image" style="background-image: url('${imagemCorrigida}');"></div>
+                    <div class="news-body">
+                        <h3>${n.titulo}</h3>
+                        <p>${n.resumo || n.texto.slice(0, 100) + '...'}</p>
+                        <a href="noticia.html?id=${n.id}">Leia mais</a>
+                    </div>
+                `;
+                    container.appendChild(card);
+                });
+            })
+            .catch(err => {
+                document.getElementById('ultimas-noticias').innerHTML = '<p>Erro ao carregar notícias.</p>';
+                console.error('Erro ao carregar últimas notícias:', err);
+            });
+    </script>
+
+    <script defer src="../js/main.js"></script>
+</body>
+
+</html>
