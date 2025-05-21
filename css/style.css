@@ -18,7 +18,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f2ecf8;
+    background: #ffffff9f;
     color: #333;
     overflow-x: hidden;
 }
@@ -599,7 +599,7 @@ header .logo img {
 }
 
 .filter-btn {
-    background: linear-gradient(135deg, #7DB61C, var(--green));
+    background: linear-gradient(135deg, #00AE9D, #003641);
     color: #fff;
     border: none;
     padding: 10px 24px;
@@ -662,8 +662,8 @@ header .logo img {
 .agencia-card {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: 260px;
-    min-width: 220px;
+    width: 300px;
+    min-width: 260px;
     padding-top: 80px;
     position: relative;
     background: #fff;
@@ -697,10 +697,26 @@ header .logo img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 110px;
-    background: linear-gradient(135deg, #85f41d, #03a998);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    height: 180px;
+
     z-index: 1;
+}
+
+.agencia-card .wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    /* altura da onda */
+    overflow: hidden;
+    z-index: 2;
+}
+
+.agencia-card .wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .agencia-card .inner-cover {
@@ -748,9 +764,13 @@ header .logo img {
 }
 
 .agencia-card .unit {
-    font-size: .95rem;
-    color: #666;
-    font-style: italic;
+    font-size: 13px;
+    color: grey;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    line-height: 1.5;
 }
 
 .agencia-card .location,
@@ -879,6 +899,13 @@ header .logo img {
     transition: background .3s, transform .2s;
     margin-bottom: 5px;
     /* remove margens extras */
+}
+
+.header-buttons a {
+    cursor: pointer;
+    /* mostra a mãozinha */
+    user-select: none;
+    /* impede seleção de texto ao arrastar */
 }
 
 /* 5) Hover nos botões */
@@ -1307,6 +1334,16 @@ header .logo img {
     line-height: 1.4;
 }
 
+/* Ajustes específicos para a página de notícia */
+.noticia-completa .container {
+    max-width: 800px;
+    /* largura máxima do texto */
+    margin: 0 auto;
+    /* centraliza horizontalmente */
+    padding: 20px;
+    /* espaçamento interno nas laterais */
+}
+
 .texto-noticia {
     text-align: justify;
     font-size: 1.1rem;
@@ -1315,15 +1352,6 @@ header .logo img {
     margin-bottom: 30px;
 }
 
-/* Data ao final da postagem */
-.data-publicacao {
-    display: block;
-    text-align: right;
-    font-size: 0.9rem;
-    color: #888;
-    font-style: italic;
-    margin-top: 30px;
-}
 
 /* === Seção de "Outras Notícias" na página de notícia === */
 .news-wrapper {
@@ -1436,3 +1464,122 @@ header .logo img {
     object-fit: cover;
     border-radius: 8px;
 }
+
+/* pagina eventos*/
+
+/* 2.1 Hero Section */
+.evento-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.evento-hero-overlay {
+  background: rgba(0,0,0,0.5);
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
+.evento-hero h1 {
+  font-size: 3rem;
+  margin-bottom: .5rem;
+  font-weight: 700;
+}
+.evento-hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.btn-primary {
+  display: inline-block;
+  background: #00AE9D;
+  color: #fff;
+  padding: .75rem 1.5rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  transition: background .2s;
+}
+.btn-primary:hover {
+  background: #008778;
+}
+
+/* 2.2 Layout Detalhe – Grid Responsivo */
+.evento-detalhe .event-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+@media (max-width: 768px) {
+  .evento-detalhe .event-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2.3 Descrição */
+.evento-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00444E;
+}
+.evento-descricao {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 2.4 Sidebar de Metadados */
+.evento-meta {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: .5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.meta-item .meta-label {
+  display: block;
+  font-size: .85rem;
+  font-weight: 600;
+  color: #00AE9D;
+}
+.meta-item .meta-value {
+  font-size: 1rem;
+  color: #333;
+  margin-top: .25rem;
+}
+.meta-cta {
+  margin-top: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background: #00444E;
+  color: #fff;
+  padding: .75rem;
+  border-radius: .5rem;
+  transition: background .2s;
+}
+.meta-cta:hover {
+  background: #002F35;
+}
+
+/* 2.5 Tipografia & Espaçamentos */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+h1,h2,h3 {
+  font-family: 'Roboto', sans-serif;
+}
+.site-footer {
+  background: #00444E;
+  color: #fff;
+  padding: 2rem 1rem;
+  /* estrutura conforme seu template atual */
+}
+

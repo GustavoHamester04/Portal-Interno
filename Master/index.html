@@ -9,8 +9,8 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="shortcut icon" href="icon/icon.webp" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="../icon/icon.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -20,7 +20,7 @@
     <header>
         <h1 class="logo">
             <a href="index.html">
-                <img src="fotos/sicooblogo.png" alt="Logo">
+                <img src="../fotos/sicooblogo.png" alt="Logo">
             </a>
         </h1>
 
@@ -52,13 +52,13 @@
     <!-- Seção Principal com uma única imagem -->
     <div class="carousel-container">
         <div class="carousel-slide active">
-            <img src="banners/banner1.jpeg" alt="Slide 1">
+            <img src="../banners/banner1.jpeg" alt="Slide 1">
         </div>
         <div class="carousel-slide">
-            <img src="banners/banner2.jpeg" alt="Slide 2">
+            <img src="../banners/banner2.jpeg" alt="Slide 2">
         </div>
         <div class="carousel-slide">
-            <img src="banners/banner3.jpeg" alt="Slide 3">
+            <img src="../banners/banner3.jpeg" alt="Slide 3">
         </div>
 
         <div class="carousel-dots">
@@ -90,164 +90,307 @@
         </div>
 
         <div class="carousel-wrapper" style="position: relative;">
-            <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+            <button class="carousel-btn left" onclick="scrollCarousel(-1, 3)">&#10094;</button>
             <div class="events-cards" id="agenciasCards">
+
                 <div class="card agencia-card sc">
+                    <!-- onda suave -->
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">SC</div>
+                            <div class="mes">PA</div>
                             <div class="dia">00</div>
                         </div>
                     </div>
                     <div class="inner">
-                        <div class="title">Sede em Caçador</div>
-                        <div class="unit">Unidade Santa Catarina</div>
+                        <div class="title">Caçador</div>
+                        <div class="unit">
+                            PA00 – Inaugurada em 17 de dezembro de 1993, com sede na Rua Carlos Sperança, nº 100,
+                            Centro, Caçador/SC, esta unidade matriz oferece abertura de contas, crédito, investimentos e
+                            suporte financeiro completo aos cooperados. <!-- :contentReference[oaicite:0]{index=0} -->
+                        </div>
                         <div class="location"><i class="fas fa-map-marker-alt"></i> Caçador – SC</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (49) 3563-0998</div>
                     </div>
                 </div>
 
                 <div class="card agencia-card sc">
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">SC</div>
+                            <div class="mes">PA</div>
                             <div class="dia">01</div>
                         </div>
                     </div>
                     <div class="inner">
-                        <div class="title">Agência em Macieira</div>
-                        <div class="unit">Unidade Santa Catarina</div>
+                        <div class="title">Macieira</div>
+                        <div class="unit">
+                            PA01 – Localizada em Macieira/SC, esta agência atende a comunidade local oferecendo serviços
+                            de conta corrente, empréstimos e orientação financeira, fortalecendo o cooperativismo na
+                            região. <!-- :contentReference[oaicite:1]{index=1} -->
+                        </div>
                         <div class="location"><i class="fas fa-map-marker-alt"></i> Macieira – SC</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (49) 3574-0273</div>
                     </div>
                 </div>
 
                 <div class="card agencia-card sc">
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">SC</div>
+                            <div class="mes">PA</div>
                             <div class="dia">02</div>
                         </div>
                     </div>
                     <div class="inner">
-                        <div class="title">Agência em Calmon</div>
-                        <div class="unit">Unidade Santa Catarina</div>
+                        <div class="title">Calmon</div>
+                        <div class="unit">
+                            PA02 – Situada no centro de Calmon/SC, na Rua Matilde Whoehringer, nº 301, esta agência
+                            apoia o desenvolvimento local oferecendo produtos de crédito rural, conta corrente e
+                            serviços digitais aos cooperados. <!-- :contentReference[oaicite:2]{index=2} -->
+                        </div>
                         <div class="location"><i class="fas fa-map-marker-alt"></i> Calmon – SC</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (49) 3573-0471</div>
                     </div>
                 </div>
 
                 <div class="card agencia-card sc">
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">SC</div>
+                            <div class="mes">PA</div>
                             <div class="dia">03</div>
                         </div>
                     </div>
                     <div class="inner">
-                        <div class="title">Agência em Timbó Grande</div>
-                        <div class="unit">Unidade Santa Catarina</div>
+                        <div class="title">Timbó Grande</div>
+                        <div class="unit">
+                            PA03 – Localizada na Rua São José, nº 339, Centro, Timbó Grande/SC, esta unidade, inaugurada
+                            em 05/09/2022, oferece atendimento personalizado com foco em crédito rural e soluções
+                            financeiras digitais. <!-- :contentReference[oaicite:3]{index=3} -->
+                        </div>
                         <div class="location"><i class="fas fa-map-marker-alt"></i> Timbó Grande – SC</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (49) 3252-1089</div>
                     </div>
                 </div>
 
                 <div class="card agencia-card sc">
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">SC</div>
+                            <div class="mes">PA</div>
                             <div class="dia">04</div>
                         </div>
                     </div>
                     <div class="inner">
                         <div class="title">Agência no Martello</div>
-                        <div class="unit">Unidade Santa Catarina</div>
+                        <div class="unit">
+                            PA04 – Situada no bairro Martello em Caçador/SC, na Rua Silvio Gioppo, nº 210, sala 10, esta
+                            agência oferece atendimento focado em micro e pequenas empresas, com soluções de crédito e
+                            serviços empresariais para impulsionar negócios locais.
+                            <!-- :contentReference[oaicite:4]{index=4} -->
+                        </div>
                         <div class="location"><i class="fas fa-map-marker-alt"></i> Caçador – SC</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (49) 3563-0708</div>
                     </div>
                 </div>
 
                 <div class="card agencia-card pr">
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">PR</div>
+                            <div class="mes">PA</div>
                             <div class="dia">05</div>
                         </div>
                     </div>
                     <div class="inner">
-                        <div class="title">Agência em Colombo</div>
-                        <div class="unit">Unidade Paraná</div>
+                        <div class="title">Colombo</div>
+                        <div class="unit">
+                            PA05 – Inaugurada em 19/11/2021 e localizada na Rua XV de Novembro, nº 294, Centro,
+                            Colombo/PR, esta unidade oferece atendimento empresarial e soluções de crédito para
+                            cooperados corporativos. <!-- :contentReference[oaicite:5]{index=5} -->
+                        </div>
                         <div class="location"><i class="fas fa-map-marker-alt"></i> Colombo – PR</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (41) 3656-7603</div>
                     </div>
                 </div>
 
                 <div class="card agencia-card sc">
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">SC</div>
+                            <div class="mes">PA</div>
                             <div class="dia">06</div>
                         </div>
                     </div>
                     <div class="inner">
-                        <div class="title">Agência em Matos Costa</div>
-                        <div class="unit">Unidade Santa Catarina</div>
+                        <div class="title">Matos Costa</div>
+                        <div class="unit">
+                            PA06 – Inaugurada em 05/09/2022, esta em Matos Costa/SC, na esquina da Rua Tereza
+                            Cristina com Rua Frei Rogério, oferece soluções de crédito para o agronegócio e atendimento
+                            próximo à comunidade cooperada. <!-- :contentReference[oaicite:6]{index=6} -->
+                        </div>
                         <div class="location"><i class="fas fa-map-marker-alt"></i> Matos Costa – SC</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (49) 3572-1238</div>
                     </div>
                 </div>
 
                 <div class="card agencia-card pr">
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">PR</div>
+                            <div class="mes">PA</div>
                             <div class="dia">07</div>
                         </div>
                     </div>
                     <div class="inner">
-                        <div class="title">Agência em Rio Branco do Sul</div>
-                        <div class="unit">Unidade Paraná</div>
+                        <div class="title">Rio Branco do Sul</div>
+                        <div class="unit">
+                            PA07 – Inaugurada em 15/06/2022, esta em Rio Branco do Sul/PR, na Rua José
+                            Bonifácio, nº 96, loja 01, atende moradores e produtores locais com soluções de crédito para
+                            o agronegócio e serviços de cooperativismo digital.
+                            <!-- :contentReference[oaicite:7]{index=7} -->
+                        </div>
                         <div class="location"><i class="fas fa-map-marker-alt"></i> Rio Branco do Sul – PR</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (49) 3542-4782</div>
                     </div>
                 </div>
 
                 <div class="card agencia-card pr">
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">PR</div>
+                            <div class="mes">PA</div>
                             <div class="dia">08</div>
                         </div>
                     </div>
                     <div class="inner">
-                        <div class="title">Agência em Itaperuçu</div>
-                        <div class="unit">Unidade Paraná</div>
+                        <div class="title">Itaperuçu</div>
+                        <div class="unit">
+                            PA08 – Inaugurada em 08/12/2022, esta em Itaperuçu/PR, na Rua Benedito Vieira
+                            Guimarães, nº 12, sala 01, oferece aos cooperados produtos de crédito rural e facilidades
+                            digitais para gestão financeira. <!-- :contentReference[oaicite:8]{index=8} -->
+                        </div>
                         <div class="location"><i class="fas fa-map-marker-alt"></i> Itaperuçu – PR</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (41) 3798-2525</div>
                     </div>
                 </div>
 
                 <div class="card agencia-card sc">
+                    <div class="wave">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+                            <path d="M0,55 
+                                Q300,35 600,55 
+                                T1200,55 
+                                L1200,0 0,0 Z"
+                            fill="#00AE9D" />
+                        </svg>
+                    </div>
+
                     <div class="image-event">
                         <div class="inner-cover">
-                            <div class="mes">SC</div>
+                            <div class="mes">PA</div>
                             <div class="dia">97</div>
                         </div>
                     </div>
                     <div class="inner">
                         <div class="title">Agência Digital</div>
-                        <div class="unit">Unidade Santa Catarina</div>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Caçador – SC</div>
+                        <div class="unit">
+                            PA97 – A Agência Digital do Sicoob Vale dos Pinhais oferece atendimento presencial e via App Sicoob
+                            e internet banking, permitindo abertura de conta, consultas e transações remotas com
+                            segurança e comodidade. <!-- :contentReference[oaicite:9]{index=9} -->
+                        </div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Online</div>
                         <div class="phone"><i class="fas fa-phone-alt"></i> (49) 3563-0998</div>
                     </div>
                 </div>
+
             </div>
-
-
-            <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
-
-
+            <button class="carousel-btn right" onclick="scrollCarousel(1, 3)">&#10095;</button>
         </div>
+
     </section>
 
 
@@ -286,7 +429,7 @@
             <div id="ultimas-noticias" class="news-content"></div>
 
             <div class="news-button-container">
-                <a href="noticias/index.html" class="news-button">Todas as Notícias</a>
+                <a href="../noticias/index.html" class="news-button">Todas as Notícias</a>
             </div>
         </section>
 
@@ -298,7 +441,7 @@
             <div class="news-content" style="display: flex; align-items: flex-start; gap: 20px;">
                 <div class="video-wrapper"
                     style="flex: 1; max-width: 40%; height: auto; border-radius: 8px; overflow: hidden;">
-                    <video src="VOCÊ SABIA - DICAS/VÍDEO - LGPD.mp4" width="100%" height="auto" controls
+                    <video src="../VOCÊ SABIA - DICAS/VÍDEO - LGPD.mp4" width="100%" height="auto" controls
                         style="object-fit: cover; border-radius: 8px;"></video>
                 </div>
                 <div class="news-text" style="flex: 1; margin-left: 20px; text-align: justify; line-height: 1.6;">
@@ -356,7 +499,7 @@
                     <p>A Sicoob é certificada como uma excelente empresa para se trabalhar, promovendo um ambiente de
                         trabalho colaborativo e inovador.</p>
                 </div>
-                <img src="SELO - GPTW/selo-gptw-png.png" alt="GPTW">
+                <img src="../SELO - GPTW/selo-gptw-png.png" alt="GPTW">
             </div>
         </section>
 
@@ -366,12 +509,12 @@
             <div class="slideshow">
                 <button class="nav-button left" onclick="moveSlides(-1)"><i class="fas fa-chevron-left"></i></button>
                 <div class="slides">
-                    <div class="slide"><img src="EVENTOS/WhatsApp Image 2024-06-18 at 11.14.40 (1).jpeg"
+                    <div class="slide"><img src="../EVENTOS/WhatsApp Image 2024-06-18 at 11.14.40 (1).jpeg"
                             alt="Momento 1"></div>
-                    <div class="slide"><img src="EVENTOS/6.png" alt="Momento 2"></div>
-                    <div class="slide"><img src="EVENTOS/9.png" alt="Momento 3"></div>
-                    <div class="slide"><img src="EVENTOS/FESTA JULINA - SICOOB UAD.png" alt="Momento 4"></div>
-                    <div class="slide"><img src="EVENTOS/7.png" alt="Momento 5"></div>
+                    <div class="slide"><img src="../EVENTOS/6.png" alt="Momento 2"></div>
+                    <div class="slide"><img src="../EVENTOS/9.png" alt="Momento 3"></div>
+                    <div class="slide"><img src="../EVENTOS/FESTA JULINA - SICOOB UAD.png" alt="Momento 4"></div>
+                    <div class="slide"><img src="../EVENTOS/7.png" alt="Momento 5"></div>
                 </div>
                 <button class="nav-button right" onclick="moveSlides(1)"><i class="fas fa-chevron-right"></i></button>
             </div>
@@ -384,7 +527,7 @@
             <div class="footer__col">
                 <h4>Links Úteis</h4>
                 <ul>
-                    <li><a href="#">Início</a></li>
+                    <li><a href="index.html">Início</a></li>
                     <li><a href="#">Produtos</a></li>
                     <li><a href="#">Serviços</a></li>
                     <li><a href="#">Quem Somos</a></li>
@@ -484,7 +627,7 @@
     </div>
 
     <script>
-        fetch('noticias/noticias.json') // Caminho relativo ao index.html principal
+        fetch('../noticias/noticias.json') // Caminho relativo ao index.html principal
             .then(res => res.json())
             .then(noticias => {
                 const ultimas = noticias.slice(0, 4); // Pega as 4 primeiras
@@ -502,7 +645,7 @@
           <div class="news-body">
             <h3>${n.titulo}</h3>
             <p>${n.resumo || n.texto.slice(0, 100) + '...'}</p>
-            <a href="noticias/noticia.html?id=${n.id}">Leia mais</a>
+            <a href="../noticias/noticia.html?id=${n.id}">Leia mais</a>
           </div>
         `;
                     container.appendChild(card);
@@ -519,4 +662,4 @@
 
 </html>
 
-<script defer src="js/main.js"></script>
+<script defer src="../js/main.js"></script>

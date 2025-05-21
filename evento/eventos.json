@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "titulo": "Reunião Comitê Financeiro",
+    "data": "2025-06-10",
+    "descricao": "Discussão de metas e balanço trimestral.",
+    "local": "Auditório Sicoob",
+    "imagem": "comite.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Treinamento de Segurança",
+    "data": "2025-06-15",
+    "descricao": "Palestra sobre procedimentos de segurança.",
+    "local": "Sala 5",
+    "imagem": "../EVENTOS/FESTA JULINA - SICOOB UAD.png"
+  }
+  
+]
