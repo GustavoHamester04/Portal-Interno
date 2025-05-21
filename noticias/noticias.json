@@ -4,16 +4,14 @@
     "titulo": "Cinthia apresenta projeto social",
     "resumo": "Cinthia propôs um novo projeto para as comunidades rurais...",
     "texto": "O projeto apresentado por Cinthia visa promover oficinas e capacitações nas regiões rurais com foco em educação financeira...",
-    "imagem": "./imagens/5.png",
-    "data": "15.05.25"
+    "imagem": "../imagens/5.png"
   },
   {
     "id": 2,
     "titulo": "Visita da ACIC à cooperativa",
     "resumo": "O Conselho da ACIC esteve presente na sede do Sicoob...",
     "texto": "A visita reforça os laços institucionais e promoveu discussões sobre ações conjuntas...",
-    "imagem": "./imagens/3.png",
-    "data": "14.05.25"
+    "imagem": "../imagens/3.png"
   },
 
   {
@@ -21,16 +19,14 @@
     "titulo": "Cinthia apresenta projeto social",
     "resumo": "Cinthia propôs um novo projeto para as comunidades rurais...",
     "texto": "O projeto apresentado por Cinthia visa promover oficinas e capacitações nas regiões rurais com foco em educação financeira...",
-    "imagem": "./imagens/4.png",
-    "data": "15.05.25"
+    "imagem": "../imagens/4.png"
   },
   {
     "id": 4,
     "titulo": "Visita da ACIC à cooperativa",
     "resumo": "O Conselho da ACIC esteve presente na sede do Sicoob...",
     "texto": "A visita reforça os laços institucionais e promoveu discussões sobre ações conjuntas...",
-    "imagem": "./imagens/1.png",
-    "data": "14.05.25"
+    "imagem": "../imagens/1.png"
   },
 
   {
@@ -38,15 +34,13 @@
     "titulo": "Cinthia apresenta projeto social",
     "resumo": "Cinthia propôs um novo projeto para as comunidades rurais...",
     "texto": "O projeto apresentado por Cinthia visa promover oficinas e capacitações nas regiões rurais com foco em educação financeira...",
-    "imagem": "./imagens/2.png",
-    "data": "15.05.25"
+    "imagem": "../imagens/2.png"
   },
   {
     "id": 6,
     "titulo": "Visita da ACIC à cooperativa",
     "resumo": "O Conselho da ACIC esteve presente na sede do Sicoob...",
-    "texto": "A visita reforça os laços institucionais e promoveu discussões sobre ações conjuntas...",
-    "imagem": "./imagens/3.png",
-    "data": "14.05.25"
+    "texto": "Este é um texto de teste para verificar o alinhamento e a formatação na página de notícia. Ao aplicar o estilo de justificação, cada linha deste parágrafo deverá ficar perfeitamente distribuída entre as margens definidas pelo container, criando um visual mais profissional e harmonioso. Utilize este texto para checar se o text-align: justify está funcionando corretamente e se há espaçamento adequado nas laterais.",
+    "imagem": "../imagens/3.png"
   }
 ]

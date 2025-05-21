@@ -17,7 +17,7 @@
     <!-- Cabeçalho -->
     <header>
         <h1 class="logo">
-            <a href="../index.html">
+            <a href="../Master/index.html">
                 <img src="../fotos/sicooblogo.png" alt="Logo">
             </a>
         </h1>
@@ -40,7 +40,7 @@
     </header>
 
     <div class="header-links">
-        <a href="../index.html">Início</a>
+        <a href="../Master/index.html">Início</a>
         <a href="#">Produtos</a>
         <a href="#">Serviços</a>
         <a href="https://www.sicoob.com.br/web/sicoob/sistema-sicoob">Quem Somos</a>
@@ -53,7 +53,6 @@
             <div class="linha-destaque"></div>
             <p id="texto-noticia" class="texto-noticia"></p>
             <div class="galeria" id="galeria-noticia"></div>
-            <span id="data-noticia" class="data"></span>
         </div>
     </main>
 
@@ -200,7 +199,6 @@
 
                 titulo.textContent = noticia.titulo;
                 texto.textContent = noticia.texto;
-                data.textContent = noticia.data;
 
                 const img = document.createElement("img");
                 img.src = noticia.imagem;

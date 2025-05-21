@@ -125,11 +125,36 @@ function setupAgenciasFiltro() {
     if (e.key === 'Enter') filterAgencias();
   });
 
-  window.scrollCarousel = function (direction) {
-    const scrollAmount = container.clientWidth;
-    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  // scrollCarousel ajustado para pular 'count' cards
+  window.scrollCarousel = function (direction, count = 3) {
+    const container = document.getElementById('agenciasCards');
+    if (!container) return;
+
+    const cards = Array.from(container.querySelectorAll('.agencia-card'))
+      .filter(c => c.style.display !== 'none');
+    if (!cards.length) return;
+
+    // calcula largura + gap para estimar índice
+    const gap = parseInt(getComputedStyle(container).gap, 10) || 0;
+    const cardW = cards[0].offsetWidth + gap;
+
+    // índice aproximado do primeiro card atualmente visível
+    const currentIndex = Math.round(container.scrollLeft / cardW);
+
+    // novo índice, limitado entre 0 e cards.length-1
+    let newIndex = currentIndex + direction * count;
+    newIndex = Math.max(0, Math.min(newIndex, cards.length - 1));
+
+    // rola até o offsetLeft desse card
+    container.scrollTo({
+      left: cards[newIndex].offsetLeft,
+      behavior: 'smooth'
+    });
   };
 }
+
+document.addEventListener('DOMContentLoaded', setupAgenciasFiltro);
+
 
 // Inicialização geral
 window.addEventListener('DOMContentLoaded', () => {
@@ -166,3 +191,26 @@ function showWeather(position) {
 function showError(err) {
   document.getElementById('weather-info').textContent = 'Clima indisponível';
 }
+
+
+// Eventos
+
+const params = new URLSearchParams(window.location.search);
+const id = parseInt(params.get('id'),10);
+
+fetch('eventos.json')
+  .then(r=>r.json())
+  .then(evts=>{
+    const e = evts.find(evt=>evt.id===id);
+    if(!e){ return; }
+    document.getElementById('titulo-evento').textContent = e.titulo;
+    const img = document.getElementById('imagem-evento');
+    if(e.imagem){ img.src = e.imagem; img.alt = e.titulo; }
+    else{ img.style.display = 'none'; }
+    document.getElementById('descricao-evento').innerHTML = e.descricao;
+    document.getElementById('data-evento').textContent = new Date(e.data).toLocaleDateString('pt-BR');
+    document.getElementById('local-evento').textContent = e.local;
+    if(e.tipo){ document.getElementById('tipo-evento').textContent = e.tipo; }
+    else{ document.getElementById('meta-tipo').style.display='none'; }
+  })
+  .catch(console.error);
